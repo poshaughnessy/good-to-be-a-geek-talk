@@ -1,0 +1,447 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* End of CSS Reset */
+
+@font-face {
+    font-family: 'Arimo';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Arimo'), local('Arimo-Regular'), url('../fonts/Arimo/Arimo-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Arimo Bold';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Arimo'), local('Arimo-Bold'), url('../fonts/Arimo/Arimo-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Arimo Italic';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Arimo'), local('Arimo-Italic'), url('../fonts/Arimo/Arimo-Italic.ttf') format('truetype');
+}
+
+body {
+    font: 15px "Arial", Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: #000;
+    color: #83c1f5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.presentation {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    display: block;
+    overflow: hidden;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: block;
+    -webkit-transition: -webkit-transform 1s ease-in-out;
+    -moz-transition: -moz-transform 1s ease-in-out;
+    -o-transition: -o-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    width: 640px;
+    height: 480px;
+    margin-top: -240px;
+    left: 50%;
+    top: 50%;
+    background: #000 url(../img/background-with-gradient.jpg) no-repeat top left;
+    background-size: 100% 100%;
+    -webkit-transition: margin 0.25s ease-in-out;
+    -moz-transition: margin 0.25s ease-in-out;
+    -o-transition: margin 0.25s ease-in-out;
+    transition: margin 0.25s ease-in-out;
+    border: 1px solid red;
+}
+
+.force-render {
+    display: block;
+    visibility: hidden;
+}
+
+.slide.far-past {
+    display: block;
+    margin-left: -1600px;
+}
+
+.slide.past {
+    visibility: visible;
+    display: block;
+    margin-left: -960px;
+}
+
+.slide.current {
+    visibility: visible;
+    display: block;
+    margin-left: -320px;
+}
+
+.slide.future {
+    visibility: visible;
+    display: block;
+    margin-left: 320px;
+}
+
+.slide.far-future {
+    display: block;
+    margin-left: 960px;
+}
+
+/* Responsive slide sizes */
+/* 640 x 480 is now the default */
+
+/* 800 x 600 */
+@media (min-width: 800px) and (min-height: 600px) {
+    body {
+        font-size: 18.75px;
+    }
+
+    .slide {
+        width: 800px;
+        height: 600px;
+        margin-top: -300px;
+    }
+
+    .slide.far-past {
+        margin-left: -2000px;
+    }
+
+    .slide.past {
+        margin-left: -1200px;
+    }
+
+    .slide.current {
+        margin-left: -400px;
+    }
+
+    .slide.future {
+        margin-left: 400px;
+    }
+
+    .slide.far-future {
+        margin-left: 1200px;
+    }
+}
+
+/* 1024 x 768 */
+@media (min-width: 1024px) and (min-height: 768px) {
+    body {
+        font-size: 24px;
+    }
+
+    .slide {
+        width: 1024px;
+        height: 768px;
+        margin-top: -384px;
+    }
+
+    .slide.far-past {
+        margin-left: -2560px;
+    }
+
+    .slide.past {
+        margin-left: -1536px;
+    }
+
+    .slide.current {
+        margin-left: -512px;
+    }
+
+    .slide.future {
+        margin-left: 512px;
+    }
+
+    .slide.far-future {
+        margin-left: 1536px;
+    }
+}
+
+/* 1152 x 864 */
+@media (min-width: 1152px) and (min-height: 864px) {
+    body {
+        font-size: 27px;
+    }
+
+    .slide {
+        width: 1152px;
+        height: 864px;
+        margin-top: -432px;
+    }
+
+    .slide.far-past {
+        margin-left: -2880px;
+    }
+
+    .slide.past {
+        margin-left: -1728px;
+    }
+
+    .slide.current {
+        margin-left: -576px;
+    }
+
+    .slide.future {
+        margin-left: 576px;
+    }
+
+    .slide.far-future {
+        margin-left: 1728px;
+    }
+}
+
+/* 1280 x 960 */
+@media (min-width: 1280px) and (min-height: 960px) {
+    body {
+        font-size: 30px;
+    }
+
+    .slide {
+        width: 1280px;
+        height: 960px;
+        margin-top: -480px;
+    }
+
+    .slide.far-past {
+        margin-left: -2560px;
+    }
+
+    .slide.past {
+        margin-left: -1920px;
+    }
+
+    .slide.current {
+        margin-left: -640px;
+    }
+
+    .slide.future {
+        margin-left: 640px;
+    }
+
+    .slide.far-future {
+        margin-left: 1920px;
+    }
+}
+
+/* 1440 x 1080 */
+@media (min-width: 1440px) and (min-height: 1080px) {
+    body {
+        font-size: 33.75px;
+    }
+
+    .slide {
+        width: 1440px;
+        height: 1080px;
+        margin-top: -540px;
+    }
+
+    .slide.far-past {
+        margin-left: -3600px;
+    }
+
+    .slide.past {
+        margin-left: -2160px;
+    }
+
+    .slide.current {
+        margin-left: -720px;
+    }
+
+    .slide.future {
+        margin-left: 720px;
+    }
+
+    .slide.far-future {
+        margin-left: 2160px;
+    }
+}
+
+/* 1600 x 1200 */
+@media (min-width: 1600px) and (min-height: 1200px) {
+    body {
+        font-size: 37.5px;
+    }
+
+    .slide {
+        width: 1600px;
+        height: 1200px;
+        margin-top: -600px;
+    }
+
+    .slide.far-past {
+        margin-left: -4000px;
+    }
+
+    .slide.past {
+        margin-left: -2400px;
+    }
+
+    .slide.current {
+        margin-left: -800px;
+    }
+
+    .slide.future {
+        margin-left: 800px;
+    }
+
+    .slide.far-future {
+        margin-left: 2400px;
+    }
+}
+
+/* 1920 x 1440 */
+@media (min-width: 1920px) and (min-height: 1440px) {
+    body {
+        font-size: 45px;
+    }
+
+    .slide {
+        width: 1920px;
+        height: 1440px;
+        margin-top: -720px;
+    }
+
+    .slide.far-past {
+        margin-left: -4800px;
+    }
+
+    .slide.past {
+        margin-left: -2880px;
+    }
+
+    .slide.current {
+        margin-left: -960px;
+    }
+
+    .slide.future {
+        margin-left: 960px;
+    }
+
+    .slide.far-future {
+        margin-left: 2880px;
+    }
+}
+
+body.three-d div.slides {
+    -webkit-transform: scale(0.78);
+    -moz-transform: scale(0.78);
+    -o-transform: scale(0.78);
+    transform: scale(0.78);
+}
+
+h1 {
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+    text-shadow: none;
+}
+
+h2 {
+    font-size: 2.5em;
+    padding: 0;
+    margin: 5% 0 0 0;
+    text-shadow: 1px 1px 1px #1b5d94;
+    width: 100%;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.top {
+    margin-top: 3%;
+}
+
+.bottom {
+    bottom: 3%;
+    position: absolute;
+    width: 100%;
+}
+
+.central {
+    margin-top: 25%;
+}
+
+/* Slide-specific styles */
+
+h1, h2, h3 {
+    text-align: center;
+}
+
