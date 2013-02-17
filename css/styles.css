@@ -469,5 +469,5 @@ h1, h2, h3 {
 .intro h1.geek {
     font-family: 'PressStart2P', Helvetica;
     font-size: 5em;
-    margin: 0.5em 0 0.5em 0;
+    margin: 0.5em 0 0 0;
 }
