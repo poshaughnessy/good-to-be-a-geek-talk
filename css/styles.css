@@ -50,29 +50,50 @@ table {
 
 /* End of CSS Reset */
 
+/* Fonts */
+
 @font-face {
     font-family: 'Arimo';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Arimo'), local('Arimo-Regular'), url('../fonts/Arimo/Arimo-Regular.ttf') format('truetype');
+    src: url('../fonts/Arimo/Arimo-Regular.ttf');
 }
 
 @font-face {
-    font-family: 'Arimo Bold';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Arimo'), local('Arimo-Bold'), url('../fonts/Arimo/Arimo-Bold.ttf') format('truetype');
+    font-family: 'Arimo';
+    font-weight: bold;
+    src: url('../fonts/Arimo/Arimo-Bold.ttf');
 }
 
 @font-face {
-    font-family: 'Arimo Italic';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Arimo'), local('Arimo-Italic'), url('../fonts/Arimo/Arimo-Italic.ttf') format('truetype');
+    font-family: 'Arimo';
+    font-style: italic;
+    src: url('../fonts/Arimo/Arimo-Italic.ttf');
 }
+
+@font-face {
+    font-family: 'Arimo';
+    font-style: italic;
+    font-weight: bold;
+    src: url('../fonts/Arimo/Arimo-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('../fonts/Press_Start_2P/PressStart2P-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'GeekAByte';
+    src: url('../fonts/GeekAByte/geekabyte2.ttf');
+}
+
+@font-face {
+    font-family: 'SourceCodePro';
+    src: url('../fonts/SourceCodePro/SourceCodePro-Regular.ttf');
+}
+
 
 body {
-    font: 15px "Arial", Helvetica, sans-serif;
+    font: 15px 'SourceCodePro', Helvetica, 'arial', sans-serif;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -81,7 +102,7 @@ body {
     left: 0px;
     top: 0px;
     background-color: #000;
-    color: #83c1f5;
+    color: #5fd85c;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -405,14 +426,14 @@ h1 {
     font-size: 3em;
     padding: 0;
     margin: 0;
-    text-shadow: none;
+    text-shadow: 1px 1px 1px #48af46;
 }
 
 h2 {
     font-size: 2.5em;
     padding: 0;
     margin: 5% 0 0 0;
-    text-shadow: 1px 1px 1px #1b5d94;
+    text-shadow: 1px 1px 1px #48af46;
     width: 100%;
 }
 
@@ -445,3 +466,8 @@ h1, h2, h3 {
     text-align: center;
 }
 
+.intro h1.geek {
+    font-family: 'PressStart2P', Helvetica;
+    font-size: 5em;
+    margin: 0.5em 0 0.5em 0;
+}
