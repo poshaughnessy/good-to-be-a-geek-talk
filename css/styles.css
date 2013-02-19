@@ -307,7 +307,7 @@ h1 {
 h2 {
     font-size: 2.5em;
     padding: 0;
-    margin: 5% 0 0 0;
+    margin: 0.2em 0 0.5em 0;
     text-shadow: 1px 1px 1px #48af46;
     width: 100%;
 }
@@ -366,5 +366,7 @@ a {
 }
 
 .credits ul {
+    margin-top: 2em;
     font-size: 0.9em;
+    list-style-type: none;
 }
