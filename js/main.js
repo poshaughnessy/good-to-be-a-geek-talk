@@ -4,7 +4,8 @@
 */
 (function() {
     var doc = document;
-    var disableBuilds = true;
+    // Allow multi-step slides
+    var disableBuilds = false;
 
     var ctr = 0;
     var spaces = /\s+/, a1 = [''];

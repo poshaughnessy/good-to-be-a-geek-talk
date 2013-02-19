@@ -335,6 +335,23 @@ a {
     margin-top: 25%;
 }
 
+.slide .contents img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+/* Multi-step slides */
+[data-build] > .to-build {
+    opacity: 0;
+}
+
+[data-build] > * {
+    -webkit-transition: opacity 0.5s ease-in-out 0.2s;
+    -moz-transition: opacity 0.5s ease-in-out 0.2s;
+    -o-transition: opacity 0.5s ease-in-out 0.2s;
+}
+
+
 /* Slide-specific styles */
 
 .intro .contents {
@@ -346,4 +363,8 @@ a {
     font-family: 'PressStart2P', Helvetica;
     font-size: 5em;
     margin: 0.5em 0 0 0;
+}
+
+.credits ul {
+    font-size: 0.9em;
 }
