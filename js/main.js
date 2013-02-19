@@ -158,7 +158,7 @@
         this._buildList = [];
         if (disableBuilds) { return; }
         if (this._node) {
-          this._buildList = query('[data-build] > *', this._node);
+            this._buildList = query('[data-build] > *', this._node);
         }
         this._buildList.forEach(function(el) {
           addClass(el, 'to-build');
@@ -200,9 +200,15 @@
         if (!this._buildList.length) {
           return false;
         }
-        removeClass(this._buildList.shift(), 'to-build');
+        var nextOne = this._buildList.shift();
+        removeClass(nextOne, 'to-build');
+        // Extended by Peter for slideshows
+        if( typeof $('[data-build]', this._node).data('slideshow') != 'undefined' ) {
+            $('[data-build] > *', this._node).removeClass('current');
+            addClass(nextOne, 'current');
+        }
         return true;
-      },
+      }
     };
 
     //
@@ -326,20 +332,24 @@
       }
     };
 
-    var updateResolutionMessage = function() {
-
-        $('#windowWidth').html(window.innerWidth);
-        $('#windowHeight').html(window.innerHeight);
-
-    }
-
     // Initialize
     new SlideShow(query('.slide'));
 
-    $(window).resize(function() {
-        updateResolutionMessage();
-    });
+    // Added by Peter so you change the slide by changing URL
+    $(window).bind('hashchange', function() {
 
-    updateResolutionMessage();
+        var h = window.location.hash;
+
+        var slideNum = 0;
+
+        try {
+            slideNum = parseInt(h.split('#slide')[1], 10);
+        } catch (e) {
+            // Swallow
+        }
+
+        slideshow.go( slideNum );
+
+    });
 
 })();
