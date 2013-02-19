@@ -102,7 +102,7 @@ body {
     left: 0px;
     top: 0px;
     background-color: #000;
-    color: #5fd85c;
+    color: #63d9d8;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -299,17 +299,23 @@ h1, h2, h3 {
 
 h1 {
     font-size: 3em;
+    font-weight: bold;
     padding: 0;
-    margin: 0;
-    text-shadow: 1px 1px 1px #48af46;
+    margin: 0.5em 0 0.5em 0;
+    text-shadow: 2px 2px 2px #234b4b;
 }
 
 h2 {
     font-size: 2.5em;
+    font-weight: bold;
     padding: 0;
     margin: 0.2em 0 0.5em 0;
-    text-shadow: 1px 1px 1px #48af46;
+    text-shadow: 2px 2px 2px #234b4b;
     width: 100%;
+}
+
+h3 {
+    font-size: 1.8em;
 }
 
 a {
@@ -355,14 +361,17 @@ a {
 /* Slide-specific styles */
 
 .intro .contents {
-    background: url(../img/opte-map-1.png) no-repeat;
+    background: url(../img/opte-map-1.jpg) no-repeat;
     background-size: 100% 100%;
+}
+
+.intro h1.top {
+    margin-top: 0.1em;
 }
 
 .intro h1.geek {
     font-family: 'PressStart2P', Helvetica;
     font-size: 5em;
-    margin: 0.5em 0 0 0;
 }
 
 .credits ul {
