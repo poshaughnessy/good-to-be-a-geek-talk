@@ -101,8 +101,8 @@ body {
     position: absolute;
     left: 0px;
     top: 0px;
-    background-color: #000;
-    color: #63d9d8;
+    background-color: #fff;
+    color: #313131;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -302,15 +302,14 @@ h1 {
     font-weight: bold;
     padding: 0;
     margin: 0.5em 0 0.5em 0;
-    text-shadow: 2px 2px 2px #234b4b;
+    text-shadow: 2px 2px 2px #CCC;
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-weight: bold;
     padding: 0;
     margin: 0.2em 0 0.5em 0;
-    text-shadow: 2px 2px 2px #234b4b;
     width: 100%;
 }
 
@@ -319,7 +318,8 @@ h3 {
 }
 
 a {
-    color: #fff;
+    color: #333;
+    font-weight: bold;
     text-decoration: none;
 }
 
@@ -332,7 +332,7 @@ a {
 }
 
 .bottom {
-    bottom: 3%;
+    bottom: 5%;
     position: absolute;
     width: 100%;
 }
@@ -362,7 +362,7 @@ a {
 }
 
 [data-slideshow] img {
-    display: none;
+    opacity: 0;
     position: relative;
     top: 0;
     left: 0;
@@ -374,7 +374,7 @@ a {
 }
 
 [data-slideshow] .current img {
-    display: inline;
+    opacity: 1;
 }
 
 [data-slideshow] a.caption {
@@ -414,18 +414,34 @@ a {
 
 /* Slide-specific styles */
 
-.intro .contents {
-    background: url(../img/opte-map-1.jpg) no-repeat;
-    background-size: 100% 100%;
-}
-
 .intro h1.top {
-    margin-top: 0.1em;
+    margin-top: 0.2em;
 }
 
 .intro h1.geek {
     font-family: 'PressStart2P', Helvetica;
-    font-size: 5em;
+    font-size: 4em;
+}
+
+.intro h2 {
+    width: 35%;
+    margin-top: 2.5em;
+    text-align: left;
+    padding-left: 2%;
+}
+
+.intro h3 {
+    text-align: left;
+    font-size: 1.3em;
+    padding-left: 2%;
+}
+
+.intro img {
+    position: absolute;
+    width: 70%;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
 }
 
 .credits ul {
