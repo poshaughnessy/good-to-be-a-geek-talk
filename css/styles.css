@@ -341,6 +341,10 @@ a {
     margin-top: 25%;
 }
 
+figcaption {
+    margin-top: 1em;
+}
+
 .slide .contents img {
     max-width: 80%;
     max-height: 80%;
@@ -449,3 +453,9 @@ a {
     font-size: 0.9em;
     list-style-type: none;
 }
+
+.rise-of-computers img {
+    width: 70%;
+}
+
+
