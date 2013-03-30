@@ -323,6 +323,10 @@ a {
     text-decoration: none;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .hidden {
     display: none;
 }
@@ -380,50 +384,31 @@ small.source {
     height: 100%;
 }
 
-[data-slideshow] img {
+[data-slideshow] img,
+[data-slideshow] .caption,
+[data-slideshow] div > * {
     opacity: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+[data-slideshow] img {
     position: relative;
     top: 0;
     left: 0;
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    -ms-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
 }
 
 [data-slideshow] .caption {
-    opacity: 0;
     margin-top: 0.5em;
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    -ms-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
 }
 
 [data-slideshow] .current img,
-[data-slideshow] .current .caption {
+[data-slideshow] .current .caption,
+[data-slideshow] .current > * {
     opacity: 1;
-}
-
-[data-slideshow] a.caption {
-    position: relative;
-    opacity: 0;
-    bottom: 1.5em;
-    right: 0;
-    font-size: 0.5em;
-    padding: 0.5em;
-    text-shadow: 1px 1px #666;
-    -webkit-transition: opacity 0.5s ease-in-out;
-    -moz-transition: opacity 0.5s ease-in-out;
-    -o-transition: opacity 0.5s ease-in-out;
-    -ms-transition: opacity 0.5s ease-in-out;
-    transition: opacity 0.5s ease-in-out;
-}
-
-[data-slideshow] .current a.caption {
-    opacity: 0.9;
 }
 
 .fade {
@@ -477,7 +462,6 @@ small.source {
 .credits ul {
     margin-top: 2em;
     font-size: 0.9em;
-    list-style-type: none;
 }
 
 .rise-of-computers img {
