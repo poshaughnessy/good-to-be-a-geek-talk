@@ -484,6 +484,10 @@ small.source {
     width: 70%;
 }
 
+.without-computers ul {
+    margin-top: 2em;
+}
+
 .industry-moving-fast img {
     width: 70%;
 }
@@ -496,8 +500,27 @@ small.source {
     width: 70%;
 }
 
+.dont-need-to-be-genius h2 {
+    margin: 20% 0 1em 0;
+}
 
-.credits p {
+.get-your-geek-on h2 {
+    margin-top: 0.5em;
+}
+
+.get-your-geek-on h3 {
+    font-size: 1.5em;
+}
+
+.get-your-geek-on img {
+    position: absolute;
+    height: 80%;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.credits .view-source {
     margin-top: 3em;
 }
 
