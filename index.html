@@ -1,5 +1,5 @@
 <!--
-  Original Licence:
+  Original HTML5 Rocks Licence:
 
   Copyright 2010 Google Inc.
 
@@ -26,9 +26,13 @@
 <head>
     <meta charset="utf-8"/>
     <title>Good to be a Geek</title>
-    <script src="js/jquery-1.9.1.js"></script>
-    <script src="js/Three.js"></script>
-    <script src="js/hasAttr.js"></script>
+    <script src="js/lib/jquery-1.9.1.js"></script>
+    <script src="js/lib/three.js"></script>
+    <script src="js/lib/Detector.js"></script>
+    <script src="js/lib/hasAttr.js"></script>
+    <script src="js/demos.js"></script>
+    <script src="js/slides.js"></script>
+    <script src="js/setup.js"></script>
     <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, user-scalable=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link rel="apple-touch-icon" href="img/ios-icon-57.png"/>
@@ -86,8 +90,14 @@
 
             <div class="slide">
                 <div class="contents">
-                    <h2>Now I get to do stuff like this...</h2>
-                    <p style="margin: 2em 0;">todo in-slide examples</p>
+                    <h2 class="central">Now I get to do stuff like this...</h2>
+                </div>
+            </div>
+
+            <div class="slide leapmotion-dino">
+                <div class="contents">
+                    <div id="leapMotionDino"></div>
+                    <p class="caption">Leap Motion demo (or use WASD keys if you don't have one)</p>
                 </div>
             </div>
 
@@ -373,8 +383,5 @@
         </div>
 
     </div>
-
-    <!-- This must be at the bottom of the page -->
-    <script src="js/main.js" type="text/javascript"></script>
 </body>
 </html>

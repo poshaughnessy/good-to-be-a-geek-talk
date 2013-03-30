@@ -459,9 +459,7 @@ small.source {
     z-index: -1;
 }
 
-.credits ul {
-    margin-top: 2em;
-    font-size: 0.9em;
+.nodecopter iframe {
 }
 
 .rise-of-computers img {
@@ -502,6 +500,11 @@ small.source {
     bottom: 0;
     right: 0;
     z-index: -1;
+}
+
+.credits ul {
+    margin-top: 2em;
+    font-size: 0.9em;
 }
 
 .credits .view-source {
