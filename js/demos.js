@@ -1,5 +1,8 @@
 var Demos = {
 
+    width: 0,
+    height: 0,
+
     activationFlags: {
         leapMotionDino: false
     },
@@ -26,15 +29,47 @@ var Demos = {
 
     init: function() {
 
-        this.leapMotionDino();
+        this.setSize();
+
+        console.log('width', this.width);
+        console.log('height', this.height);
+
+        var LeapMotionDinoDemo = this.setupLeapMotionDinoDemo();
+        this.leapMotionDino = new LeapMotionDinoDemo(this);
+
+        var self = this;
+
+        window.addEventListener( 'resize', function() {
+
+            self.setSize();
+
+            if( self.leapMotionDino ) {
+                self.leapMotionDino.updateSize();
+            }
+
+        }, false );
 
     },
 
-    leapMotionDino: function() {
+    setSize: function() {
 
-        (function(parent) {
+        // Set demo size
+        var $slideContents = $('.slide .contents');
+        this.width = $slideContents.width();
+        this.height = $slideContents.height();
+
+        console.log('width', this.width);
+        console.log('height', this.height);
+
+    },
+
+    setupLeapMotionDinoDemo: function() {
+
+        return function(parent) {
 
             if( !Detector.webgl ) return;
+
+            var heightRatio = 0.7;
 
             // Create a WebGL renderer
             var renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -43,10 +78,8 @@ var Demos = {
             var container = document.getElementById('leapMotionDino');
             container.appendChild( renderer.domElement );
 
-            // Set the size
-            var $slideContents = $('.slide .contents');
-            var width = $slideContents.width();
-            var height = $slideContents.height() * 0.7;
+            var width = parent.width;
+            var height = parent.height * heightRatio;
 
             renderer.setSize( width, height );
 
@@ -124,7 +157,21 @@ var Demos = {
 
             };
 
-        })(this);
+            this.updateSize = function() {
+
+                console.log('Update size');
+
+                var width = parent.width;
+                var height = parent.height * heightRatio;
+
+                renderer.setSize( width, height );
+
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+
+            };
+
+        };
 
     }
 
