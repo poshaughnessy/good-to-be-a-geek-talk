@@ -37,14 +37,14 @@ var Demos = {
             if( !Detector.webgl ) return;
 
             // Create a WebGL renderer
-            var renderer = new THREE.WebGLRenderer();
+            var renderer = new THREE.WebGLRenderer({ antialias: true });
 
             // Add generated <canvas> to page
             var container = document.getElementById('leapMotionDino');
             container.appendChild( renderer.domElement );
 
             // Set the size
-            var $slideContents = $(container).parents('.contents');
+            var $slideContents = $('.slide .contents');
             var width = $slideContents.width();
             var height = $slideContents.height() * 0.7;
 
@@ -76,7 +76,7 @@ var Demos = {
             */
 
             // Lights
-            var ambientLight = new THREE.AmbientLight( 0xBBBBBB );
+            var ambientLight = new THREE.AmbientLight( 0xDDDDDD );
             scene.add( ambientLight );
 
             var spotLight = new THREE.SpotLight(0xFFFFFF, 1.0, 2000);
@@ -88,7 +88,7 @@ var Demos = {
             var loader = new THREE.JSONLoader();
             var mesh;
 
-            var clock = new THREE.Clock();
+            //var clock = new THREE.Clock();
 
             var filePath = '../models/trex/trex.js';
 
@@ -114,7 +114,7 @@ var Demos = {
 
                     renderer.render( scene, camera );
 
-                    var delta = clock.getDelta();
+                    //var delta = clock.getDelta();
 
                     //controls.update(delta);
 
