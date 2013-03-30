@@ -36,17 +36,19 @@ var Demos = {
 
             if( !Detector.webgl ) return;
 
-            var width = window.innerWidth;
-            var height = window.innerHeight;
-
             // Create a WebGL renderer
             var renderer = new THREE.WebGLRenderer();
-
-            renderer.setSize( width, height );
 
             // Add generated <canvas> to page
             var container = document.getElementById('leapMotionDino');
             container.appendChild( renderer.domElement );
+
+            // Set the size
+            var $slideContents = $(container).parents('.contents');
+            var width = $slideContents.width();
+            var height = $slideContents.height() * 0.7;
+
+            renderer.setSize( width, height );
 
             // Make a scene
             var scene = new THREE.Scene();
