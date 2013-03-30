@@ -350,6 +350,21 @@ figcaption {
     max-height: 80%;
 }
 
+blockquote {
+    font-size: 2em;
+    margin-top: 2em;
+}
+
+blockquote p {
+    margin-bottom: 1em;
+}
+
+small.source {
+    display: block;
+    margin-top: 2em;
+    font-style: italic;
+}
+
 /* Slideshows */
 
 [data-slideshow] {
@@ -475,5 +490,14 @@ figcaption {
 
 .hollywood img {
     margin-top: 2em;
+}
+
+.changing-the-world img {
+    width: 70%;
+}
+
+
+.credits p {
+    margin-top: 3em;
 }
 
