@@ -377,7 +377,18 @@ figcaption {
     transition: opacity 1s ease-in-out;
 }
 
-[data-slideshow] .current img {
+[data-slideshow] .caption {
+    opacity: 0;
+    margin-top: 0.5em;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+[data-slideshow] .current img,
+[data-slideshow] .current .caption {
     opacity: 1;
 }
 
@@ -455,6 +466,10 @@ figcaption {
 }
 
 .rise-of-computers img {
+    width: 70%;
+}
+
+.industry-moving-fast img {
     width: 70%;
 }
 
