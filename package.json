@@ -1,5 +1,5 @@
 {
-  "name": "london-web-ar-slides",
+  "name": "good-to-be-a-geek-talk",
   "version": "0.0.9",
   "dependencies" : {
     "express": "2.5.x"
