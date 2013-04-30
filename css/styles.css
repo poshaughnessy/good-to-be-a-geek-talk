@@ -426,6 +426,13 @@ small.source {
     -o-transition: opacity 0.5s ease-in-out 0.2s;
 }
 
+.github-ribbon img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 120px;
+}
 
 /* Slide-specific styles */
 
@@ -457,6 +464,13 @@ small.source {
     bottom: 0;
     right: 0;
     z-index: -1;
+}
+
+.leapmotion-dino p {
+    position: absolute;
+    width: 100%;
+    bottom: 2px;
+    text-align: center;
 }
 
 .nodecopter iframe {

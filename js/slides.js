@@ -201,7 +201,8 @@ var Slides = function (demos) {
                 return;
             }
             if (this._node) {
-                this._buildList = query('[data-build] > *', this._node);
+                // Peter added ignore for .current
+                this._buildList = query('[data-build] > *:not(.current)', this._node);
             }
             this._buildList.forEach(function (el) {
                 addClass(el, 'to-build');
@@ -251,6 +252,34 @@ var Slides = function (demos) {
                 addClass(nextOne, 'current');
             }
             return true;
+        },
+        // Added by Peter so we can go backwards through transitions
+        buildPrev: function () {
+
+            var $currentSlideShowTransition = $('.current', this._node);
+
+            if( $currentSlideShowTransition ) {
+
+                var currentSlideShowIndex = $currentSlideShowTransition.index();
+
+                if( currentSlideShowIndex > 0 ) {
+
+                    var $prevSlideShowTransition = $currentSlideShowTransition.prev();
+
+                    $prevSlideShowTransition.addClass('current').removeClass('to-build');
+
+                    $currentSlideShowTransition.addClass('to-build').removeClass('current');
+
+                    this._buildList.unshift($currentSlideShowTransition[0]);
+
+                    return true;
+
+                }
+
+            }
+
+            return false;
+
         }
     };
 
@@ -298,7 +327,9 @@ var Slides = function (demos) {
     };
 
     SlideShow.prototype = {
+        _autoAdvance: false,
         _slides: [],
+        _timeout: null,
         _update: function (dontPush) {
             if (history.pushState) {
                 if (!dontPush) {
@@ -318,24 +349,33 @@ var Slides = function (demos) {
         next: function () {
             if (!this._slides[this.current - 1].buildNext()) {
                 // Added by Peter
+                if( this._timeout ) clearTimeout( this._timeout );
                 var was = this.current;
                 this.current = Math.min(this.current + 1, this._slides.length);
                 this._update();
                 // Added by Peter
                 if( this.current !== was ) this.slideChanged();
+            } else {
+                this.slideShowChanged();
             }
         },
         prev: function () {
             // Added by Peter
-            var was = this.current;
-            this.current = Math.max(this.current - 1, 1);
-            this._update();
-            // Added by Peter
-            if( this.current !== was ) this.slideChanged();
+            if( !this._slides[this.current - 1].buildPrev() ) {
+                if( this._timeout ) clearTimeout( this._timeout );
+                var was = this.current;
+                this.current = Math.max(this.current - 1, 1);
+                this._update();
+                // Added by Peter
+                if( this.current !== was ) this.slideChanged();
+            } else {
+                this.slideShowChanged();
+            }
 
         },
         go: function (num) {
             // Added by Peter
+            if( this._timeout ) clearTimeout( this._timeout );
             var was = this.current;
             this.current = num;
             this._update(true);
@@ -410,6 +450,58 @@ var Slides = function (demos) {
         slideChanged : function() {
 
             demos.onSlide(this.current - 1);
+
+            this.autoSlides();
+
+        },
+        // Added by Peter
+        slideShowChanged : function() {
+
+            demos.onSlideShowChange();
+
+            this.autoSlides();
+
+        },
+
+        // Added by Peter
+        autoSlides : function() {
+
+            if( this._timeout ) clearTimeout( this._timeout );
+
+            if( this.current > 1 ) {
+
+                var thisSlideEl = this._slides[this.current-1]['_node'];
+
+                var autoSlides = $('[data-autoslide]', $(thisSlideEl));
+
+                if( autoSlides.length > 0 &&
+                    $('.to-build', $(thisSlideEl)).length > 0 &&
+                    $(autoSlides).attr('data-autoslide') !== 'undefined' &&
+                    $(autoSlides).attr('data-autoslide') !== false ) {
+
+                        // Schedule auto-proceed time-out
+
+                        var slideTimeout = parseInt( $('.current', autoSlides).attr('data-autoslide') );
+
+                        // If not defined on individual transition, use default
+
+                        if( !slideTimeout ) slideTimeout = parseInt( $(autoSlides).attr('data-autoslide') );
+
+                        var self = this;
+                        this._timeout = setTimeout( function() { self.autoAdvance() }, slideTimeout );
+
+                }
+
+            }
+
+        },
+
+        // Added by Peter
+        autoAdvance : function() {
+
+            if( this._autoAdvance ) {
+                this.next();
+            }
 
         }
     };

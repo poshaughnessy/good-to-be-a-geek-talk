@@ -69,8 +69,6 @@ var Demos = {
 
             if( !Detector.webgl ) return;
 
-            var heightRatio = 0.7;
-
             // Create a WebGL renderer
             var renderer = new THREE.WebGLRenderer({ antialias: true });
 
@@ -79,7 +77,7 @@ var Demos = {
             container.appendChild( renderer.domElement );
 
             var width = parent.width;
-            var height = parent.height * heightRatio;
+            var height = parent.height;
 
             renderer.setSize( width, height );
 
@@ -100,13 +98,11 @@ var Demos = {
             // Add it to the scene
             scene.add( camera );
 
-            /*
             var controls = new THREE.FlyControlsMod( camera );
 
             controls.movementSpeed = 30;
             controls.rollSpeed = 0.1;
             controls.dragToLook = true; // Just moving mouse shouldn't change rotation
-            */
 
             // Lights
             var ambientLight = new THREE.AmbientLight( 0xDDDDDD );
@@ -121,7 +117,7 @@ var Demos = {
             var loader = new THREE.JSONLoader();
             var mesh;
 
-            //var clock = new THREE.Clock();
+            var clock = new THREE.Clock();
 
             var filePath = '../models/trex/trex.js';
 
@@ -147,9 +143,9 @@ var Demos = {
 
                     renderer.render( scene, camera );
 
-                    //var delta = clock.getDelta();
+                    var delta = clock.getDelta();
 
-                    //controls.update(delta);
+                    controls.update(delta);
 
                 }
 
@@ -162,7 +158,7 @@ var Demos = {
                 console.log('Update size');
 
                 var width = parent.width;
-                var height = parent.height * heightRatio;
+                var height = parent.height;
 
                 renderer.setSize( width, height );
 
