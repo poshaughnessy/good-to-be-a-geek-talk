@@ -2,9 +2,10 @@
   "name": "good-to-be-a-geek-talk",
   "version": "0.0.9",
   "dependencies" : {
-    "express": "2.5.x"
+    "express": "3.x"
   },
   "engines" : {
-    "node": "0.6.x"
+    "node": "0.10.x",
+    "npm": "1.2.x"
   }
 }

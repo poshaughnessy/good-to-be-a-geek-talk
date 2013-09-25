@@ -1,103 +1,131 @@
-var LeapMotionDinoDemo = function(parent) {
+define([
+    'three',
+    'detector',
+    'flyControlsMod'
+], function(THREE, Detector) {
 
-    if( !Detector.webgl ) return;
+    var DEMO_ID = 'demo-dino';
 
-    // Create a WebGL renderer
-    var renderer = new THREE.WebGLRenderer({ antialias: true });
+    var demo = {
 
-    // Add generated <canvas> to page
-    var container = document.getElementById('leapMotionDino');
-    container.appendChild( renderer.domElement );
+        id: DEMO_ID,
 
-    var width = parent.width;
-    var height = parent.height;
+        constructor: function() {
 
-    renderer.setSize( width, height );
+            if( !Detector.webgl ) return;
 
-    // Make a scene
-    var scene = new THREE.Scene();
+            // Create a WebGL renderer
+            var renderer = new THREE.WebGLRenderer({ antialias: true });
 
-    // Create a camera
-    var camera = new THREE.PerspectiveCamera(
-            45,           // Field of View
-            width/height, // Aspect ratio
-            1,            // zNear
-            10000         // zFar
-    );
+            // Add generated <canvas> to page
+            var slide = document.getElementsByClassName(DEMO_ID)[0];
+            var container = slide.getElementsByClassName('demo-container')[0];
 
-    camera.position.y = 100;
-    camera.position.z = 400;
+            container.appendChild( renderer.domElement );
 
-    // Add it to the scene
-    scene.add( camera );
+            var width = container.offsetWidth;
+            var height = container.offsetHeight;
 
-    var controls = new THREE.FlyControlsMod( camera );
+            renderer.setSize( width, height );
 
-    controls.movementSpeed = 30;
-    controls.rollSpeed = 0.1;
-    controls.dragToLook = true; // Just moving mouse shouldn't change rotation
+            // Make a scene
+            var scene = new THREE.Scene();
 
-    // Lights
-    var ambientLight = new THREE.AmbientLight( 0xDDDDDD );
-    scene.add( ambientLight );
+            // Create a camera
+            var camera = new THREE.PerspectiveCamera(
+                    45,           // Field of View
+                    width/height, // Aspect ratio
+                    1,            // zNear
+                    10000         // zFar
+            );
 
-    var spotLight = new THREE.SpotLight(0xFFFFFF, 1.0, 2000);
-    spotLight.position.set( 50, 50, 300 ); // x, y, z
-    spotLight.target.position.set( 0, -100, -100 );
-    scene.add( spotLight );
+            camera.position.y = 100;
+            camera.position.z = 400;
 
-    // Dinosaur
-    var loader = new THREE.JSONLoader();
-    var mesh;
+            // Add it to the scene
+            scene.add( camera );
 
-    var clock = new THREE.Clock();
+            var controls = new THREE.FlyControlsMod( camera );
 
-    var filePath = '../models/trex/trex.js';
+            controls.movementSpeed = 30;
+            controls.rollSpeed = 0.1;
+            controls.dragToLook = true; // Just moving mouse shouldn't change rotation
 
-    loader.load(filePath, function(geometry, materials) {
+            // Lights
+            var ambientLight = new THREE.AmbientLight( 0xDDDDDD );
+            scene.add( ambientLight );
 
-        mesh = new THREE.Mesh( geometry,
-                new THREE.MeshFaceMaterial( materials ) );
+            var spotLight = new THREE.SpotLight(0xFFFFFF, 1.0, 2000);
+            spotLight.position.set( 50, 50, 300 ); // x, y, z
+            spotLight.target.position.set( 0, -100, -100 );
+            scene.add( spotLight );
 
-        mesh.scale.set(10, 10, 10);
-        mesh.rotation.y = Math.PI / 2;
-        mesh.position.set( 0, 0, 0 );
+            // Dinosaur
+            var loader = new THREE.JSONLoader();
+            var mesh;
 
-        scene.add( mesh );
+            var clock = new THREE.Clock();
 
-        animate();
+            var filePath = '../models/trex/trex.js';
 
-    });
+            loader.load(filePath, function(geometry, materials) {
 
-    var animate = function() {
+                mesh = new THREE.Mesh( geometry,
+                        new THREE.MeshFaceMaterial( materials ) );
 
-        // Optimisation
-        if( parent.activationFlags.leapMotionDino ) {
+                mesh.scale.set(10, 10, 10);
+                mesh.rotation.y = Math.PI / 2;
+                mesh.position.set( 0, 0, 0 );
 
-            renderer.render( scene, camera );
+                scene.add( mesh );
 
-            var delta = clock.getDelta();
+                animate();
 
-            controls.update(delta);
+            });
+
+            var stopped = false;
+
+            this.start = function() {
+                stopped = false;
+                animate();
+            };
+
+            this.stop = function() {
+                stopped = true;
+            };
+
+            var animate = function() {
+
+                // Optimisation
+                if( stopped ) {
+                    return;
+                }
+
+                renderer.render( scene, camera );
+
+                var delta = clock.getDelta();
+
+                controls.update(delta);
+
+                requestAnimationFrame( animate );
+
+            };
+
+            this.updateSize = function(width, height) {
+
+                console.log('Update size', width, height);
+
+                renderer.setSize( width, height );
+
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+
+            };
 
         }
 
-        requestAnimationFrame( animate );
-
     };
 
-    this.updateSize = function() {
+    return demo;
 
-        console.log('Update size');
-
-        var width = parent.width;
-        var height = parent.height;
-
-        renderer.setSize( width, height );
-
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-
-    };
-
-};
+});

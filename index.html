@@ -25,18 +25,10 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Good to be a Geek</title>
-    <script src="js/lib/jquery-1.9.1.js"></script>
-    <script src="js/lib/three.js"></script>
-    <script src="js/lib/Detector.js"></script>
-    <script src="js/lib/hasAttr.js"></script>
-    <script src="js/lib/FlyControlsMod.js"></script>
-    <script src="js/demos/dinosaur.js"></script>
-    <script src="js/demos.js"></script>
-    <script src="js/slides.js"></script>
-    <script src="js/setup.js"></script>
     <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, user-scalable=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Good to be a Geek</title>
+    <script data-main="js/main" src="js/lib/require.js"></script>
     <link rel="apple-touch-icon" href="img/ios-icon-57.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="img/ios-icon-72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="img/ios-icon-114.png"/>
@@ -102,10 +94,10 @@
                 </div>
             </div>
 
-            <div class="slide leapmotion-dino">
+            <div class="slide demo-dino">
                 <div class="contents">
-                    <div id="leapMotionDino"></div>
-                    <p class="caption">Leap Motion demo (or use keys WASD + QE + ↑↓ if you don't have one)</p>
+                    <div class="demo-container"></div>
+                    <p class="caption">Keyboard controls: WASD + QE + ↑↓</p>
                 </div>
             </div>
 
@@ -115,17 +107,17 @@
                 </div>
             </div>
 
-            <div class="slide">
+            <div class="slide demo-todo">
                 <div class="contents">
                     <h2>...it's fun and creative</h2>
-                    <div id="spriteDemo"></div>
+                    <div class="demo-container"></div>
                 </div>
             </div>
 
-            <div class="slide">
+            <div class="slide demo-phaser">
                 <div class="contents">
                     <h2>...you can create your own games, apps, &amp; websites</h2>
-                    <p style="margin: 2em 0;">todo example embedded game</p>
+                    <div class="demo-container"></div>
                     <h3>Impress your friends!</h3>
                 </div>
             </div>
