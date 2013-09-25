@@ -32,55 +32,44 @@ define([
 
             // Create a camera
             var camera = new THREE.PerspectiveCamera(
-                    45,           // Field of View
+                    75,           // Field of View
                     width/height, // Aspect ratio
                     1,            // zNear
-                    10000         // zFar
+                    2000         // zFar
             );
 
-            camera.position.y = 100;
-            camera.position.z = 400;
+            camera.position.z = 1000;
 
             // Add it to the scene
             scene.add( camera );
 
-            var controls = new THREE.FlyControlsMod( camera );
+            // Sprite stuff
 
-            controls.movementSpeed = 30;
-            controls.rollSpeed = 0.1;
-            controls.dragToLook = true; // Just moving mouse shouldn't change rotation
+            var geometry = new THREE.Geometry();
 
-            // Lights
-            var ambientLight = new THREE.AmbientLight( 0xDDDDDD );
-            scene.add( ambientLight );
+            for ( i = 0; i < 100; i ++ ) {
 
-            var spotLight = new THREE.SpotLight(0xFFFFFF, 1.0, 2000);
-            spotLight.position.set( 50, 50, 300 ); // x, y, z
-            spotLight.target.position.set( 0, -100, -100 );
-            scene.add( spotLight );
+                var vertex = new THREE.Vector3();
+                vertex.x = Math.random() * 2000 - 1000;
+                vertex.y = Math.random() * 2000 - 1000;
+                vertex.z = Math.random() * 2000 - 1000;
 
-            // Dinosaur
-            var loader = new THREE.JSONLoader();
-            var mesh;
+                geometry.vertices.push( vertex );
 
-            var clock = new THREE.Clock();
+            }
 
-            var filePath = '../models/trex/trex.js';
+            var sprite = THREE.ImageUtils.loadTexture('../../img/horse_0.png');
 
-            loader.load(filePath, function(geometry, materials) {
+            var material = new THREE.ParticleBasicMaterial({size: 50, map: sprite});
 
-                mesh = new THREE.Mesh( geometry,
-                        new THREE.MeshFaceMaterial( materials ) );
+            var particle = new THREE.ParticleSystem( geometry, material );
 
-                mesh.scale.set(10, 10, 10);
-                mesh.rotation.y = Math.PI / 2;
-                mesh.position.set( 0, 0, 0 );
+            particle.rotation.x = Math.random() * 6;
+            particle.rotation.y = Math.random() * 6;
+            particle.rotation.z = Math.random() * 6;
 
-                scene.add( mesh );
+            scene.add( particle );
 
-                animate();
-
-            });
 
             var stopped = false;
 
@@ -101,10 +90,6 @@ define([
                 }
 
                 renderer.render( scene, camera );
-
-                var delta = clock.getDelta();
-
-                controls.update(delta);
 
                 requestAnimationFrame( animate );
 

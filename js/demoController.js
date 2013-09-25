@@ -28,13 +28,13 @@ define([
 
                 if( $currentSlide.hasClass( demo.id ) ) {
 
-                    if( demo.object ) {
-                        if( typeof demo.object.start !== 'undefined' ) {
-                            demo.object.start();
-                        }
-                    } else {
+                    if( !demo.object || demo.object.start === 'undefined' ) {
                         var constructor = demo.constructor;
                         demo.object = new constructor();
+                    }
+
+                    if( demo.object.start ) {
+                        demo.object.start();
                     }
 
                 }
