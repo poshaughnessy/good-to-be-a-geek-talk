@@ -1,8 +1,9 @@
 define([
     'jquery',
     'demos/dinosaur',
-    'demos/phaserdemo'
-], function($, demo1, demo2) {
+    'demos/creative',
+    'demos/game'
+], function($, demo1, demo2, demo3) {
 
     var DemoController = {
 
@@ -11,7 +12,8 @@ define([
 
         demos: [
             demo1,
-            demo2
+            demo2,
+            demo3
         ],
 
         onSlide: function(slideNumber) {

@@ -2,9 +2,11 @@ define([
     'phaser'
 ], function(Phaser) {
 
+    var DEMO_ID = 'demo-phaser';
+
     var demo = {
 
-        id: 'demo-phaser',
+        id: DEMO_ID,
 
         constructor: function() {
 
