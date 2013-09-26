@@ -57,7 +57,7 @@ define([
                         2000         // zFar
                 );
 
-                camera.position.z = 1000;
+                camera.position.z = 500;
 
                 // Add it to the scene
                 scene.add( camera );
@@ -77,11 +77,11 @@ define([
 
                 }
 
-                var sprite1 = THREE.ImageUtils.loadTexture('../../img/horse_0.png');
-                var sprite2 = THREE.ImageUtils.loadTexture('../../img/platformerGraphicsDeluxe_Updated/Enemies/snailWalk1.png');
+                var sprite1 = THREE.ImageUtils.loadTexture('../../img/HTML5_Badge_512.png');
+                var sprite2 = THREE.ImageUtils.loadTexture('../../img/HTML5_Badge_512.png');
 
-                var material1 = new THREE.ParticleBasicMaterial({size: 100, map: sprite1});
-                var material2 = new THREE.ParticleBasicMaterial({size: 100, map: sprite2});
+                var material1 = new THREE.ParticleBasicMaterial({size: 50, map: sprite1, transparent: true, depthTest: false, sizeAttenuation: false});
+                var material2 = new THREE.ParticleBasicMaterial({size: 250, map: sprite2, transparent: true, depthTest: false, sizeAttenuation: false});
 
                 var particle1 = new THREE.ParticleSystem( geometry, material1 );
                 var particle2 = new THREE.ParticleSystem( geometry, material2 );
