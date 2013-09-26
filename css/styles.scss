@@ -442,6 +442,11 @@ small.source {
         width: 100%;
         height: 80%;
         position: relative;
+
+        .loading {
+            position: relative;
+            top: 40%;
+        }
     }
 
     &.intro {

@@ -4,6 +4,7 @@ require.config({
         detector: 'lib/Detector',
         flyControlsMod: 'lib/FlyControlsMod',
         jquery: 'lib/jquery-1.9.1',
+        pace: 'lib/pace',
         phaser: 'lib/phaser.min',
         //pixi: 'lib/pixi',
         stats: 'lib/stats.min',

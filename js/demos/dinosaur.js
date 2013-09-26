@@ -20,6 +20,9 @@ define([
             // Add generated <canvas> to page
             var slide = document.getElementsByClassName(DEMO_ID)[0];
             var container = slide.getElementsByClassName('demo-container')[0];
+            var loadingIcon = container.getElementsByClassName('loading')[0];
+
+            loadingIcon.style.display = 'block';
 
             container.appendChild( renderer.domElement );
 
@@ -78,6 +81,8 @@ define([
                 mesh.position.set( 0, 0, 0 );
 
                 scene.add( mesh );
+
+                loadingIcon.style.display = 'none';
 
                 animate();
 

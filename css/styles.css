@@ -356,6 +356,9 @@ small.source {
   width: 100%;
   height: 80%;
   position: relative; }
+  .slide .demo-container .loading {
+    position: relative;
+    top: 40%; }
 .slide.intro h1.top {
   margin-top: 0.2em; }
 .slide.intro h1.geek {
