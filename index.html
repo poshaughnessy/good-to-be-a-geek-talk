@@ -1,0 +1,461 @@
+<!--
+  Original HTML5 Rocks Licence:
+
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+                 Brad Neuberg
+
+  Re-purposed and modified by Peter O'Shaughnessy
+-->
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Good to be a Geek</title>
+    <script data-main="js/main" src="js/lib/require.js"></script>
+    <link rel="apple-touch-icon" href="img/ios-icon-57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="img/ios-icon-72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="img/ios-icon-114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="img/ios-icon-144.png"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+    <!--
+    <a class="github-ribbon" href="https://github.com/poshaughnessy/good-to-be-a-geek-talk">
+        <img src="img/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub">
+    </a>
+    -->
+
+    <div class="presentation">
+
+        <div class="slides">
+
+            <div class="slide intro">
+                <div class="contents">
+                    <h1 class="top">Why it's good to be a</h1>
+                    <h1 class="geek">GEEK</h1>
+                    <h2>(And take up coding)</h2>
+                    <img src="img/nerd-programmer.jpg" alt="Geek"/>
+                    <h3 class="bottom">Peter O'Shaughnessy</h3>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>Who Am I?</h2>
+                    <div data-build data-slideshow>
+                        <div>
+                            <img src="img/geek-pillow.jpg" alt="Geek!"/>
+                        </div>
+                        <div>
+                            <img src="img/zx-spectrum.jpg" alt="ZX Spectrum"/>
+                            <p class="caption">First coded on my brothers' ZX Spectrum</p>
+                        </div>
+                        <div>
+                            <img src="img/atari-st.jpg" alt="Then on an Atari ST about age 12"/>
+                            <p class="caption">Then wrote BASIC programs for Atari ST</p>
+                        </div>
+                        <div>
+                            <img src="img/google-1998.png" alt="Google.com in 1998"/>
+                            <p class="caption">Got a PC - and the Internet!</p>
+                        </div>
+                        <div>
+                            <img src="img/uni-of-nottingham-degree.jpg" alt="University of Nottingham degree"/>
+                            <p class="caption">Took a degree in Computer Science</p>
+                        </div>
+                        <div>
+                            <img src="img/me-at-nodecopter.jpg" alt="Pearson Future Technologies"/>
+                            <p class="caption">Now been a developer for 10 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2 class="central">Now I get to do stuff like this...</h2>
+                </div>
+            </div>
+
+            <div class="slide demo-dino">
+                <div class="contents">
+                    <div class="demo-container">
+                        <div class="loading">Loading...</div>
+                    </div>
+                    <p class="caption">Keyboard controls: WASD + QE + ↑↓</p>
+                </div>
+            </div>
+
+            <div class="slide nodecopter">
+                <div class="contents">
+                    <h2>And this...</h2>
+                    <iframe src="//player.vimeo.com/video/62417807" width="90%" height="70%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                    </iframe>
+                    <p>
+                        Our <a href="http://vimeo.com/62417807">Leap Motion hack</a> @ <a href="http://nodecopter.com">Nodecopter, London</a>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2 class="central">You should take up coding too, because...</h2>
+                </div>
+            </div>
+
+            <div class="slide demo-creative">
+                <div class="contents">
+                    <h2>...it's fun and creative</h2>
+                    <div class="demo-container"></div>
+                </div>
+            </div>
+
+            <div class="slide demo-game">
+                <div class="contents">
+                    <h2>...you can create your own games, apps, &amp; websites</h2>
+                    <div class="demo-container" id="phaser-container"></div>
+                    <!--<h3>Impress your friends!</h3>-->
+                </div>
+            </div>
+
+            <div class="slide rise-of-computers">
+                <div class="contents">
+                    <h2>...computers are everywhere &amp; becoming ever more important</h2>
+                    <figure>
+                        <img src="img/computer-sales-1975-2011.png" alt="Graph of computer, smartphone and tablet sales"/>
+                        <figcaption>Source: <a href="http://arstechnica.com/business/2012/08/from-altair-to-ipad-35-years-of-personal-computer-market-share/">Ars Technica</a></figcaption>
+                    </figure>
+                </div>
+            </div>
+
+
+            <div class="slide without-computers">
+                <div class="contents">
+                    <h2>...without coders there would be no</h2>
+                    <ul>
+                        <li>World Wide Web</li>
+                        <li>Video games</li>
+                        <li>Mobile phones</li>
+                        <li>Online social networking</li>
+                        <li>Digital cameras</li>
+                        <li>Digital music</li>
+                        <li>Digital video</li>
+                        <li>Calculators</li>
+                        <li>E-books</li>
+                        <li>Credit cards</li>
+                        <li>ATMs</li>
+                        <li>Barcodes</li>
+                        <li>Modern medicine</li>
+                        <li>Modern transport</li>
+                        <li>Space travel</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="slide industry-moving-fast">
+                <div class="contents">
+                    <h2>...technology is moving so fast</h2>
+                    <div data-build data-slideshow>
+                        <div>
+                            <img src="img/leap-motion-fruit-ninja.jpg" alt="Leap Motion fruit ninja"/>
+                            <p class="caption">Gestural interfaces (Leap Motion)</p>
+                        </div>
+                        <div>
+                            <img src="img/pebble-watch.jpg" alt="Pebble watch"/>
+                            <p class="caption">Smart watches (Pebble)</p>
+                        </div>
+                        <div>
+                            <img src="img/google-glass.jpg" alt="Google Glass"/>
+                            <p class="caption">Smart glasses (Google Glass)</p>
+                        </div>
+                        <div>
+                            <img src="img/3doodler.jpg" alt="3Doodler"/>
+                            <p class="caption">3D printing/drawing (3Doodler)</p>
+                        </div>
+                        <div>
+                            <img src="img/brainwave-cat-ears.jpg" alt="Brainwave cat ears"/>
+                            <p class="caption">Mind control (brainwave sensors)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2 class="central">...coders get to play with gadgets!</h2>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>...start while you're young</h2>
+                    <div data-build>
+                        <div>
+                            <blockquote>“Programming is a language skill and the best coders learn young enough to become natives”</blockquote>
+                            <small class="source">CoderDojo</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>...there's high demand</h2>
+                    <div data-build data-slideshow>
+                        <div>
+                            <blockquote>&ldquo;Globally we have a huge shortage of great coders&rdquo;</blockquote>
+                            <small class="source">CoderDojo</small>
+                        </div>
+                        <div>
+                            <blockquote>
+                                &ldquo;We simply cannot hire enough computer scientists and this seems madness at a time of such high youth unemployment&rdquo;
+                            </blockquote>
+                            <small class="source">Ian Livingstone, Life President, Eidos Interactive</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>...it's well paid</h2>
+                    <div data-build data-slideshow>
+                        <div>
+                            <blockquote>
+                                &ldquo;If you want to have a high-paying job on graduation day, study computer science&rdquo;
+                            </blockquote>
+                            <small class="source"><a href="http://www.networkworld.com/news/2010/022210-computer-science.html">Network World</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>...it's an exciting time right here in London</h2>
+                    <div data-build data-slideshow>
+                        <div>
+                            <img src='img/old-street.jpg' alt="Old Street"/>
+                        </div>
+                        <div>
+                            <blockquote>
+                                &ldquo;London's Tech City is Europe's Fastest Growing Tech Cluster&rdquo;
+                            </blockquote>
+                            <small class="source"><a href="http://businessdawes.com/2013/06/02/the-time-is-now-londons-tech-city-is-europes-fastest-growing-tech-cluster/">businessdawes.com</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide hollywood">
+                <div class="contents">
+                    <h2>...geeks are even cool in Hollywood now!</h2>
+                    <!--<img src="img/social-network.png" alt="The Social Network film"/>-->
+                    <div data-build data-slideshow>
+                        <div>
+                            <blockquote>
+                                &ldquo;Hollywood's latest trend: Geeks&rdquo;
+                            </blockquote>
+                            <small class="source"><a href="http://www.calgaryherald.com/entertainment/movie-guide/Hollywood+latest+trend+Geeks+film/8779946/story.html">calgaryherald.com</a></small>
+                        </div>
+                        <div>
+                            <blockquote>
+                                &ldquo;Geek Is The New Cool&rdquo;
+                            </blockquote>
+                            <small class="source"><a href="http://www.hongkiat.com/blog/why-geek-is-the-new-cool/">hongkiat.com</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2 class="central">But most importantly...</h2>
+                </div>
+            </div>
+
+            <div class="slide changing-the-world">
+                <div class="contents">
+                    <h2>...computers are changing the world</h2>
+                    <img src="img/changing-the-world.jpg" alt="Keen learners in Ghana"/>
+                </div>
+            </div>
+
+            <div class="slide program-or-be-programmed">
+                <div class="contents">
+                    <h2>"Program or be programmed"</h2>
+                    <div data-build>
+                        <blockquote>
+                            <p>&ldquo;Do we direct technology, or do we let ourselves be directed by it and those who have mastered it?</p>
+                        </blockquote>
+                        <div class="continued">
+                            <blockquote>
+                                <p>... Choose the former and you gain access to the control panel of civilisation.&rdquo;</p>
+                            </blockquote>
+                            <small class="source">Douglas Rushkoff</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide power">
+                <div class="contents">
+                    <p>In other words...</p>
+                    <div data-build>
+                        <h3>Being able to code</h3>
+                        <h3>gives you <strong>power</strong></h3>
+                        <h3>that you can use for <strong>good</strong></h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2 class="central">So how can you get started?</h2>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>CoderDojo</h2>
+                    <p style="margin: 2em 0;">todo</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>Rewired State</h2>
+                    <p style="margin: 2em 0;">todo</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>Khan Academy</h2>
+                    <p style="margin: 2em 0;">todo</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>Codecademy</h2>
+                    <p style="margin: 2em 0;">todo</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>Mozilla WebMaker</h2>
+                    <p style="margin: 2em 0;">todo</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>Let's Code!</h2>
+                    <p style="margin: 2em 0;">todo</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>Raspberry Pi</h2>
+                    <p style="margin: 2em 0;">todo</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>View The Source</h2>
+                    <p style="margin: 2em 0;">todo</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2>JavaScript, Python, Ruby, Java...?</h2>
+                    <p style="margin: 2em 0;">todo</p>
+                </div>
+            </div>
+
+
+            <div class="slide">
+                <div class="contents">
+                    <h2 class="central">Create a text file, call it <em>something</em>.html and start writing a webpage</h2>
+                </div>
+            </div>
+
+            <div class="slide dont-need-to-be-genius">
+                <div class="contents">
+                    <div data-build>
+                        <h2 class="current">You don't need to be a genius</h2>
+                        <h3>All you need is patience and practice</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="contents">
+                    <h2 class="central">So...</h2>
+                </div>
+            </div>
+
+            <div class="slide get-your-geek-on">
+                <div class="contents">
+                    <h2>&ldquo;Get your geek on&rdquo;</h2>
+                    <h3>And start coding!</h3>
+                    <img src="img/get-your-geek-on.jpg" alt="Getting his geek on!"/>
+                </div>
+            </div>
+
+            <div class="slide credits">
+                <div class="contents">
+                    <h2>Credits</h2>
+                    <ul>
+                        <!--<li><a href="http://www.opte.org/">The Opte Project</a> for their <a href="http://www.opte.org/maps/">Internet map images</a> (Creative Commons)</li>-->
+                        <!--<li><a href="http://www.flickr.com/photos/28495439@N05/">river61</a> for their <a href="http://www.flickr.com/photos/28495439@N05/6339125372/">Geek Electronics</a> image on Flickr (Creative Commons)</li>-->
+                        <li><a href="http://www.flickr.com/photos/pillowhead_designs/">pillowhead designs</a> for their <a href="http://www.flickr.com/photos/pillowhead_designs/382981126/sizes/z/in/photostream/">Geek Pillow image</a> (Creative Commons)</li>
+                        <li><a href="http://www.flickr.com/photos/marcusjb/">marcus_jb1973</a> for his <a href="http://www.flickr.com/photos/marcusjb/3432572640/">ZX Spectrum photo</a> (Creative Commons)</li>
+                        <li>Bill Bertram for his <a href="http://en.wikipedia.org/wiki/File:Atari_1040STf.jpg">Atari ST image</a> (Creative Commons)</li>
+                        <li>The <a href="http://archive.org/web/web.php">Internet Archive Way Back Machine</a> for <a href="http://web.archive.org/web/19981202230410/http://www.google.com/">Google.com circa 1998</a></li>
+                        <li><a href="http://www.dk.com">DK</a> for the use of their TRex dinosaur model</li>
+                        <!--<li><a href="http://www.flickr.com/photos/raymaclean/">Ray MacLean</a> for his <a href="http://www.flickr.com/photos/raymaclean/3541470481/">Homer image</a> (Creative Commons)</li>-->
+                        <!--<li><a href="http://www.flickr.com/photos/flysi/">Simon Abrams</a> for his <a href="http://www.flickr.com/photos/flysi/183272970/">robot image</a> (Creative Commons)</li>-->
+                        <li><a href="http://www.flickr.com/photos/fumi/">Fumi Yamazaki</a> for his <a href="http://www.flickr.com/photos/fumi/8542741466/">Leap Motion photo</a> (Creative Commons)</li>
+                        <li><a href="http://www.flickr.com/photos/retrocactus/">John Biehler</a> for his <a href="http://www.flickr.com/photos/retrocactus/8496108691/">Pebble watch photo</a> (Creative Commons)</li>
+                        <li><a href="http://www.flickr.com/photos/thomashawk/">Thomas Hawk</a> for his <a href="http://www.flickr.com/photos/thomashawk/7050489913/">Google Glass photo</a> (Creative Commons)</li>
+                        <li><a href="http://www.flickr.com/photos/soujirou/">soujirou</a> for their <a href="http://www.flickr.com/photos/soujirou/8033377210/">Necomimi brainwave cat ears photo</a> (Creative Commons)</li>
+                        <li><a href="http://commons.wikimedia.org/">Wikimedia Commons</a> for the <a href="http://commons.wikimedia.org/wiki/File:The_social_network.svg">Social Network logo</a> (Creative Commons)</li>
+                        <li><a href="http://www.flickr.com/photos/eifl/">EIFL</a> for their photo of <a href="http://www.flickr.com/photos/eifl/8551829060/">keen learners in Ghana</a> (Creative Commons)</li>
+                        <li><a href="http://opengameart.org/users/redshrike">Stephen Challener</a> for his <a href="http://opengameart.org/content/the-awesome-possum-ultimate-smash-friends">Awesome Possum</a> 2D game sprite (Creative Commons)</li>
+                        <li><a href="http://www.flickr.com/photos/mbiddulph/">Matt Biddulph</a> for his <a href="http://www.flickr.com/photos/mbiddulph/2716828550/">Old Street hi-tech hotspot</a> photo (Creative Commons)</li>
+                        <!--<li><a href="http://opengameart.org/users/doudoulolita">doudoulolita</a> for the <a href="http://opengameart.org/content/bearsum-pixel-art-bear">Bearsum 2D game art</a> (Creative Commons)</li>-->
+                    </ul>
+                    <p class="view-source">View the source at:</p>
+                    <p><a href="https://github.com/poshaughnessy/good-to-be-a-geek-talk">github.com/poshaughnessy/good-to-be-a-geek-talk</a></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
