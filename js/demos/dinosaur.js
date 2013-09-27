@@ -69,7 +69,7 @@ define([
 
             var clock = new THREE.Clock();
 
-            var filePath = '../models/trex/trex.js';
+            var filePath = 'models/trex/trex.js';
 
             loader.load(filePath, function(geometry, materials) {
 
