@@ -317,6 +317,10 @@ h3 {
     font-size: 1.8em;
 }
 
+strong {
+    font-weight: bold;
+}
+
 a {
     color: #333;
     font-weight: bold;
@@ -508,6 +512,22 @@ small.source {
 
     &.changing-the-world img {
         width: 70%;
+    }
+
+    &.program-or-be-programmed {
+        .continued blockquote {
+            margin-top: 1em;
+        }
+    }
+
+    &.power {
+        p {
+            margin: 2em 0 3em 0;
+        }
+        h3 {
+            margin-top: 1em;
+            font-weight: normal;
+        }
     }
 
     &.dont-need-to-be-genius h2 {

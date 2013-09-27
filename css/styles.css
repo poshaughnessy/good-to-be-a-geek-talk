@@ -256,6 +256,9 @@ h2 {
 h3 {
   font-size: 1.8em; }
 
+strong {
+  font-weight: bold; }
+
 a {
   color: #333;
   font-weight: bold;
@@ -394,6 +397,13 @@ small.source {
   margin-top: 2em; }
 .slide.changing-the-world img {
   width: 70%; }
+.slide.program-or-be-programmed .continued blockquote {
+  margin-top: 1em; }
+.slide.power p {
+  margin: 2em 0 3em 0; }
+.slide.power h3 {
+  margin-top: 1em;
+  font-weight: normal; }
 .slide.dont-need-to-be-genius h2 {
   margin: 20% 0 1em 0; }
 .slide.get-your-geek-on h2 {
