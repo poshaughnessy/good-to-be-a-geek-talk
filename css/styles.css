@@ -387,6 +387,8 @@ small.source {
   width: 100%;
   bottom: 2px;
   text-align: center; }
+.slide.nodecopter p {
+  margin-top: 1em; }
 .slide.rise-of-computers img {
   width: 70%; }
 .slide.without-computers ul {
