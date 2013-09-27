@@ -5,7 +5,7 @@ require.config({
         flyControlsMod: 'lib/FlyControlsMod',
         jquery: 'lib/jquery-1.9.1',
         pace: 'lib/pace',
-        phaser: 'lib/phaser.min',
+        phaser: 'lib/phaser',
         //pixi: 'lib/pixi',
         stats: 'lib/stats.min',
         three: 'lib/three.min',

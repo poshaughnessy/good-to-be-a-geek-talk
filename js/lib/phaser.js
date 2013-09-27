@@ -8940,6 +8940,9 @@ Phaser.Stage.prototype = {
     */
     boot: function () {
 
+        // XXXXXX
+        console.log('Phaser.Stage boot, offset:', this.offset);
+
         Phaser.Canvas.getOffset(this.canvas, this.offset);
 
         this.bounds = new Phaser.Rectangle(this.offset.x, this.offset.y, this.game.width, this.game.height);
