@@ -63,9 +63,6 @@ define([
 
             this.setSize();
 
-            console.log('width', this.width);
-            console.log('height', this.height);
-
             var self = this;
 
             window.addEventListener( 'resize', function() {
@@ -92,9 +89,6 @@ define([
             var $slideContents = $('.slide .contents');
             this.width = $slideContents.width();
             this.height = $slideContents.height();
-
-            console.log('width', this.width);
-            console.log('height', this.height);
 
         }
 

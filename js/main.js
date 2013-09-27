@@ -19,6 +19,9 @@ require.config({
         flyControlsMod: {
             deps: ['three']
         },
+        phaser: {
+            exports: 'Phaser'
+        },
         stats: {
             exports: 'Stats'
         },
