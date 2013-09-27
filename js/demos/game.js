@@ -21,9 +21,9 @@ define([
 
             function preload() {
 
-                game.load.spritesheet('possum', '../../img/awesome-possum-sprite.png', 84, 84);
+                game.load.spritesheet('possum', 'img/awesome-possum-sprite.png', 84, 84);
 
-                game.load.spritesheet('monster', '../../img/monster1/mon1_sprite_walk_left.png', 84, 84);
+                game.load.spritesheet('monster', 'img/monster1/mon1_sprite_walk_left.png', 84, 84);
                 //game.load.image('background', '../../img/game-background.png');
 
             }
