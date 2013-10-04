@@ -1,6 +1,6 @@
 define([
     'jquery',
-    'demos/dinosaur',
+    'demos/robot',
     'demos/creative',
     'demos/game'
 ], function($, demo1, demo2, demo3) {

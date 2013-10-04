@@ -4,7 +4,7 @@ define([
     'flyControlsMod'
 ], function(THREE, Detector) {
 
-    var DEMO_ID = 'demo-dino';
+    var DEMO_ID = 'demo-robot';
 
     var demo = {
 
@@ -42,42 +42,43 @@ define([
                     10000         // zFar
             );
 
-            camera.position.y = 100;
-            camera.position.z = 400;
+            camera.position.y = 250;
+            camera.position.z = 1000;
 
             // Add it to the scene
             scene.add( camera );
 
             var controls = new THREE.FlyControlsMod( camera );
 
-            controls.movementSpeed = 30;
+            controls.movementSpeed = 50;
             controls.rollSpeed = 0.1;
             controls.dragToLook = true; // Just moving mouse shouldn't change rotation
 
             // Lights
-            var ambientLight = new THREE.AmbientLight( 0xDDDDDD );
+            var ambientLight = new THREE.AmbientLight( 0xCCCCCC );
             scene.add( ambientLight );
 
             var spotLight = new THREE.SpotLight(0xFFFFFF, 1.0, 2000);
-            spotLight.position.set( 50, 50, 300 ); // x, y, z
-            spotLight.target.position.set( 0, -100, -100 );
+            spotLight.position.set( 50, 50, 500 ); // x, y, z
+            spotLight.target.position.set( 0, 250, 0 );
             scene.add( spotLight );
 
-            // Dinosaur
+            // Robot
             var loader = new THREE.JSONLoader();
             var mesh;
 
             var clock = new THREE.Clock();
 
-            var filePath = 'models/trex/trex.js';
+            var filePath = 'models/robot_cartoon_02/robot_cartoon_02.js';
 
             loader.load(filePath, function(geometry, materials) {
 
                 mesh = new THREE.Mesh( geometry,
                         new THREE.MeshFaceMaterial( materials ) );
 
-                mesh.scale.set(10, 10, 10);
-                mesh.rotation.y = Math.PI / 2;
+                //mesh.rotation.y = Math.PI;
+                mesh.rotation.x = Math.PI / 2;
+                mesh.rotation.z = -Math.PI / 3;
                 mesh.position.set( 0, 0, 0 );
 
                 scene.add( mesh );
