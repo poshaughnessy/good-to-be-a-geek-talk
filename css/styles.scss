@@ -321,6 +321,10 @@ strong {
     font-weight: bold;
 }
 
+em {
+    font-style: italic;
+}
+
 a {
     color: #333;
     font-weight: bold;
@@ -529,11 +533,80 @@ small.source {
     &.power {
         p {
             margin: 2em 0 3em 0;
+            font-size: 1.2em;
+            font-style: italic;
         }
         h3 {
             margin-top: 1em;
             font-weight: normal;
+            font-size: 2.2em;
         }
+    }
+
+    &.where-to-start {
+
+        img {
+            margin-top: 5%;
+        }
+
+        &.codecademy img {
+            margin-top: 20%;
+        }
+        &.webmaker img {
+            margin-top: 15%;
+        }
+        &.raspberry-pi img {
+            max-width: 60%;
+        }
+        &.coderdojo img {
+            max-width: 50%;
+        }
+        &.rewired-state img {
+            max-width: 50%;
+        }
+
+        .link {
+            font-size: 1.4em;
+            margin-top: 1.5em;
+        }
+
+        .link + .link {
+            margin-top: 1em;
+        }
+    }
+
+    &.which-language {
+
+        ul li {
+             font-size: 1.2em;
+             margin-top: 1em;
+        }
+
+        .central {
+            margin-top: 15%;
+        }
+
+    }
+
+    &.language {
+
+        img {
+            margin: 2em 0;
+        }
+
+        &.javascript img {
+            max-width: 50%;
+        }
+
+        h4 {
+            margin-top: 2em;
+            font-size: 1.3em;
+        }
+    }
+
+    &.view-source img {
+        width: 235px;
+        height: 253px;
     }
 
     &.dont-need-to-be-genius h2 {
