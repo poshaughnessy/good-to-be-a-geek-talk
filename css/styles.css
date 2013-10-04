@@ -259,6 +259,9 @@ h3 {
 strong {
   font-weight: bold; }
 
+em {
+  font-style: italic; }
+
 a {
   color: #333;
   font-weight: bold;
@@ -402,10 +405,45 @@ small.source {
 .slide.program-or-be-programmed .continued blockquote {
   margin-top: 1em; }
 .slide.power p {
-  margin: 2em 0 3em 0; }
+  margin: 2em 0 3em 0;
+  font-size: 1.2em;
+  font-style: italic; }
 .slide.power h3 {
   margin-top: 1em;
-  font-weight: normal; }
+  font-weight: normal;
+  font-size: 2.2em; }
+.slide.where-to-start img {
+  margin-top: 5%; }
+.slide.where-to-start.codecademy img {
+  margin-top: 20%; }
+.slide.where-to-start.webmaker img {
+  margin-top: 15%; }
+.slide.where-to-start.raspberry-pi img {
+  max-width: 60%; }
+.slide.where-to-start.coderdojo img {
+  max-width: 50%; }
+.slide.where-to-start.rewired-state img {
+  max-width: 50%; }
+.slide.where-to-start .link {
+  font-size: 1.4em;
+  margin-top: 1.5em; }
+.slide.where-to-start .link + .link {
+  margin-top: 1em; }
+.slide.which-language ul li {
+  font-size: 1.2em;
+  margin-top: 1em; }
+.slide.which-language .central {
+  margin-top: 15%; }
+.slide.language img {
+  margin: 2em 0; }
+.slide.language.javascript img {
+  max-width: 50%; }
+.slide.language h4 {
+  margin-top: 2em;
+  font-size: 1.3em; }
+.slide.view-source img {
+  width: 235px;
+  height: 253px; }
 .slide.dont-need-to-be-genius h2 {
   margin: 20% 0 1em 0; }
 .slide.get-your-geek-on h2 {
